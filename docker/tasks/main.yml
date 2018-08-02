@@ -1,0 +1,11 @@
+---
+# tasks file for docker
+- name: instala o prereq pro docker
+  include: prereq.yml
+
+- name: ajusta o repositorio
+  include: repositorio.yml
+
+- name: instalar o docker
+  include: instalar.yml
+

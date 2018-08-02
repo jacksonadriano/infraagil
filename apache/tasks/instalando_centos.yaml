@@ -1,0 +1,5 @@
+
+- name: instalando o apache
+  yum:
+   name: httpd
+  when: ansible_os_family == "RedHat"

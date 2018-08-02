@@ -1,0 +1,28 @@
+- name: instalar os pacotes somente no docker
+  apt:
+   name: "{{ item }}"
+   state: present
+   update_cache: yes
+  with_items:
+   - apt-transport-https
+   - ca-certificates
+   - curl
+   - software-properties-common
+  when: ansible_hostname == "docker"
+
+#- name: instalando os pacotes no docker 4linux
+#  package:
+#   name: "{{ item }}"
+#  with_items:
+#   - apt-transport-https
+#   - ca-certificates
+#   - curl
+#   - software-properties-common
+
+
+
+- name: Adicionar a key gpg
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  when: ansible_hostname == "docker"

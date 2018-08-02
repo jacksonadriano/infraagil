@@ -1,0 +1,13 @@
+- name: instalando pacotes no SO
+  hosts: all
+  tasks:
+   - name: instalando pacotes p debian
+     apt:
+      name: "{{ item }}"
+      state: present
+     with_items:
+      - vim
+      - nano
+      - sl
+      - cowsay
+     when: ansible_os_family == "Debian"

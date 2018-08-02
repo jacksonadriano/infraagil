@@ -1,0 +1,8 @@
+- name: instalar o docker
+  apt:
+   name: "{{ item }}"
+   state: present
+   update_cache: yes
+  with_items:
+   - docker-ce
+  when: ansible_hostname == "docker"

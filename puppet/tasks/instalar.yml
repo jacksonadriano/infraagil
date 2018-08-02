@@ -1,0 +1,15 @@
+- name: instalar o puppetserver somente no devops
+  apt:
+   name: "{{ item }}"
+   state: present
+   update_cache: yes
+  with_items:
+   - puppetserver
+  when: ansible_hostname == "devops"
+
+- name: instala o agent do puppet em todas as maquinas
+  package:
+   name: puppet-agent
+   state: present
+   update_cache: yes
+

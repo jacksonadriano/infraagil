@@ -1,0 +1,15 @@
+---
+# tasks file for apache
+- name:  chamando a playbook instalando centos
+  include: instalando_centos.yaml
+
+- name: chamando a playbook instalando debian
+  include: instalando_debian.yaml
+
+
+- name: chamando a playbook do arquivo
+  include: create.yaml
+
+- name: chamando a playbook do arquivo para centos
+  include: create_centos.yaml
+

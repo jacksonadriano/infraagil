@@ -1,0 +1,10 @@
+
+- name: verificando se o arquivo index.html existe
+  command: " test -f /var/www/html/index.html "
+  register: index
+  ignore_errors: yes
+  
+- name: mudando o arquivo
+  when: index.rc == 0
+  shell: " echo ola mundo > /var/www/html/index.html "
+  ignore_errors: yes

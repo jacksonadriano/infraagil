@@ -1,0 +1,9 @@
+---
+# tasks file for pacotes
+
+- name:  chamando a playbook p instalar pacotes no centos
+  include: instalando_centos.yaml
+
+- name: chamando a playbook p instalar pacotes no debian
+  include: instalando_debian.yaml
+
